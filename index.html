@@ -17,98 +17,113 @@ font-family:Segoe UI,Arial;
 body{
 height:100vh;
 overflow:hidden;
+background:black;
 color:white;
 }
 
-/* ВОДНИЙ ФОН */
+/* СЦЕНА */
 .intro{
 position:relative;
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:flex-start;
-background:linear-gradient(
-180deg,
-#0a3c66 0%,
-#0f5c91 40%,
-#1f8ed6 100%
-);
 }
 
 /* ВІДЕО */
 .video_media{
+
 position:absolute;
+
 top:50%;
 left:55%;
+
 transform:translate(-50%,-50%);
+
 height:100%;
 min-width:100%;
+
 object-fit:cover;
 
-opacity:0.9;
+opacity:0.95;
+
 filter:
-brightness(1.4)
-contrast(1.3)
-saturate(1.4);
+brightness(1.5)
+contrast(1.4)
+saturate(1.3);
 
 z-index:1;
 }
 
-/* ЕФЕКТ ВОДИ */
+/* затемнення щоб текст читався */
 .intro::after{
+
 content:"";
+
 position:absolute;
-bottom:0;
+
 width:100%;
-height:200px;
+height:100%;
 
 background:linear-gradient(
-transparent,
-rgba(0,120,255,0.4)
+to bottom,
+rgba(0,0,0,0.4),
+rgba(0,0,0,0.7)
 );
 
 z-index:2;
 }
 
-/* КОНТЕНТ */
+/* ПАНЕЛЬ */
 .intro_content{
 
 position:relative;
 z-index:3;
 
-margin-top:90px;
+margin-top:80px;
 
 width:85%;
-max-width:380px;
+max-width:350px;
 
-padding:25px;
+padding:22px;
 
-border-radius:20px;
+border-radius:18px;
 
 background:rgba(0,0,0,0.35);
 
-backdrop-filter:blur(8px);
+backdrop-filter:blur(10px);
 
 text-align:center;
 }
 
 /* ЗАГОЛОВОК */
 h1{
-font-size:28px;
-color:#4fd2ff;
+
+font-size:26px;
+
+color:#00e0ff;
+
 margin-bottom:10px;
-text-shadow:0 0 15px rgba(0,200,255,0.7);
+
+text-shadow:0 0 10px rgba(0,200,255,0.6);
 }
 
 /* ТЕКСТ */
+
 p{
+
 font-size:14px;
-color:#e5f7ff;
+
 line-height:1.4;
-margin-bottom:20px;
+
+color:#eeeeee;
+
+margin-bottom:18px;
+
 }
 
 /* КНОПКА */
+
 .btn-install{
 
 display:inline-block;
@@ -117,32 +132,38 @@ padding:10px 24px;
 
 border-radius:25px;
 
-background:linear-gradient(
-90deg,
-#00c6ff,
-#0072ff
-);
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+
+font-size:14px;
+
+font-weight:bold;
 
 color:white;
-font-weight:bold;
-font-size:15px;
 
 text-decoration:none;
 
-box-shadow:0 5px 15px rgba(0,140,255,0.6);
+box-shadow:0 4px 12px rgba(0,120,255,0.6);
 
 transition:0.25s;
+
 }
 
 .btn-install:hover{
+
 transform:scale(1.05);
+
 }
 
-/* ФУТЕР */
+/* футер */
+
 .footer-text{
+
 margin-top:10px;
+
 font-size:11px;
+
 opacity:0.6;
+
 }
 
 </style>
@@ -161,16 +182,16 @@ opacity:0.6;
 <h1>ДЕСНА</h1>
 
 <p>
-Відчуй атмосферу річки, тишу та азарт риболовлі.  
+Відчуй атмосферу річки, тишу та азарт риболовлі.
 Твій берег завжди поруч.
 </p>
 
 <a href="https://drive.google.com/file/d/1p-Ot1pk1etyOBXxdjOkNT2lRyHeqgeC2/view?usp=drive_link" class="btn-install">
-Встановити гру
+Встановити гру 🎣
 </a>
 
 <div class="footer-text">
-DESNA 
+DESNA
 </div>
 
 </div>
