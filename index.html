@@ -3,118 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ДЕСНА: Рибалка</title>
+<title>ДЕСНА</title>
+
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-    overflow: hidden;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,Arial;
 }
 
-/* --- Фонове відео для мобільного --- */
-.intro {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: flex-start; /* панель вище */
-    justify-content: center;
-    background: #000;
+body{
+height:100vh;
+overflow:hidden;
+color:white;
 }
 
-.video_media {
-    position: absolute;
-    top: 50%;
-    left: 52%;
-    width: auto;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    opacity: 0.9;
-    filter: contrast(1.3) saturate(1.2);
-    z-index: 1;
+/* ВОДНИЙ ФОН */
+.intro{
+position:relative;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+background:linear-gradient(
+180deg,
+#0a3c66 0%,
+#0f5c91 40%,
+#1f8ed6 100%
+);
 }
 
-/* --- Контент --- */
-.intro_content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 90%;
-    padding: 25px 20px;
-    background: rgba(0,0,0,0.5);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-    margin-top: 8vh;
+/* ВІДЕО */
+.video_media{
+position:absolute;
+top:50%;
+left:55%;
+transform:translate(-50%,-50%);
+height:100%;
+min-width:100%;
+object-fit:cover;
+
+opacity:0.9;
+filter:
+brightness(1.4)
+contrast(1.3)
+saturate(1.4);
+
+z-index:1;
 }
 
-h1 {
-    font-size: 2rem;
-    color: #00e0ff;
-    text-shadow: 0 0 8px #00c6ff55;
-    margin-bottom: 10px;
+/* ЕФЕКТ ВОДИ */
+.intro::after{
+content:"";
+position:absolute;
+bottom:0;
+width:100%;
+height:200px;
+
+background:linear-gradient(
+transparent,
+rgba(0,120,255,0.4)
+);
+
+z-index:2;
 }
 
-p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    margin-bottom: 18px;
-    color: #f0f0f0;
+/* КОНТЕНТ */
+.intro_content{
+
+position:relative;
+z-index:3;
+
+margin-top:90px;
+
+width:85%;
+max-width:380px;
+
+padding:25px;
+
+border-radius:20px;
+
+background:rgba(0,0,0,0.35);
+
+backdrop-filter:blur(8px);
+
+text-align:center;
 }
 
-.btn-install {
-    display: inline-block;
-    padding: 10px 28px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
-    border-radius: 25px;
-    text-decoration: none;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0,114,255,0.5);
+/* ЗАГОЛОВОК */
+h1{
+font-size:28px;
+color:#4fd2ff;
+margin-bottom:10px;
+text-shadow:0 0 15px rgba(0,200,255,0.7);
 }
 
-.btn-install:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0,114,255,0.7);
-    filter: brightness(1.2);
+/* ТЕКСТ */
+p{
+font-size:14px;
+color:#e5f7ff;
+line-height:1.4;
+margin-bottom:20px;
 }
 
-.footer-text {
-    margin-top: 12px;
-    font-size: 0.7rem;
-    color: rgba(255,255,255,0.4);
+/* КНОПКА */
+.btn-install{
+
+display:inline-block;
+
+padding:10px 24px;
+
+border-radius:25px;
+
+background:linear-gradient(
+90deg,
+#00c6ff,
+#0072ff
+);
+
+color:white;
+font-weight:bold;
+font-size:15px;
+
+text-decoration:none;
+
+box-shadow:0 5px 15px rgba(0,140,255,0.6);
+
+transition:0.25s;
 }
 
-/* --- Додаткові налаштування для маленьких екранів --- */
-@media (max-width: 480px) {
-    h1 { font-size: 1.7rem; }
-    p { font-size: 0.9rem; }
-    .btn-install { padding: 8px 22px; font-size: 0.95rem; }
-    .intro_content { margin-top: 6vh; padding: 20px 15px; }
+.btn-install:hover{
+transform:scale(1.05);
 }
+
+/* ФУТЕР */
+.footer-text{
+margin-top:10px;
+font-size:11px;
+opacity:0.6;
+}
+
 </style>
 </head>
+
 <body>
 
 <div class="intro">
-    <video class="video_media" autoplay muted loop playsinline>
-        <source src="background.mp4" type="video/mp4">
-    </video>
 
-    <div class="intro_content">
-        <h1>ДЕСНА</h1>
-        <p>Відчуй атмосферу річки, тишу та азарт риболовлі. Твій берег завжди поруч.</p>
-        <a href="https://drive.google.com/file/d/1p-Ot1pk1etyOBXxdjOkNT2lRyHeqgeC2/view?usp=drive_link" class="btn-install">Встановити гру 📥</a>
-        <div class="footer-text">DESNA 2026</div>
-    </div>
+<video class="video_media" autoplay muted loop playsinline>
+<source src="background.mp4" type="video/mp4">
+</video>
+
+<div class="intro_content">
+
+<h1>ДЕСНА</h1>
+
+<p>
+Відчуй атмосферу річки, тишу та азарт риболовлі.  
+Твій берег завжди поруч.
+</p>
+
+<a href="https://drive.google.com/file/d/1p-Ot1pk1etyOBXxdjOkNT2lRyHeqgeC2/view?usp=drive_link" class="btn-install">
+Встановити гру
+</a>
+
+<div class="footer-text">
+DESNA 
+</div>
+
+</div>
+
 </div>
 
 </body>
